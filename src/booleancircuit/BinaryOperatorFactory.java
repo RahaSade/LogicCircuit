@@ -9,11 +9,12 @@ package booleancircuit;
  *
  * @author s132054
  */
-public class OrFactory implements BinaryFactory {
-
-    @Override
-    public LogicCircuit create(LogicCircuit lhs, LogicCircuit rhs) {
-        return new Or(lhs, rhs);
+public interface BinaryOperatorFactory {
+    
+    public enum Type {
+        AND,
+        OR
     }
     
+    public BinaryOperator create(Type type, LogicCircuit lhs, LogicCircuit rhs);
 }

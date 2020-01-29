@@ -9,6 +9,10 @@ package booleancircuit;
  *
  * @author 20195003
  */
-abstract class UnaryOperator implements LogicCircuit {
-    protected LogicCircuit op1;
+public abstract class UnaryOperator implements LogicCircuit {
+    final protected LogicCircuit op1;
+
+    protected UnaryOperator(LogicCircuit op1) {
+        this.op1 = op1;
+    }
 }

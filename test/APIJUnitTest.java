@@ -4,13 +4,10 @@
  * and open the template in the editor.
  */
 
-import booleancircuit.AndFactory;
-import booleancircuit.OrFactory;
-import booleancircuit.NotFactory;
+import booleancircuit.BinaryOperatorFactoryImpl;
+import booleancircuit.UnaryOperatorFactoryImpl;
 import booleancircuit.OperandFactoryImpl;
 
-import booleancircuit.BinaryFactory;
-import booleancircuit.UnaryFactory;
 import booleancircuit.OperandFactory;
 
 import booleancircuit.Operand;
@@ -22,6 +19,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import booleancircuit.BinaryOperatorFactory;
+import booleancircuit.UnaryOperatorFactory;
 
 /**
  *
@@ -29,9 +28,8 @@ import static org.junit.Assert.*;
  */
 public class APIJUnitTest {
 
-    UnaryFactory notf;
-    BinaryFactory andf;
-    BinaryFactory orf;
+    UnaryOperatorFactory uf;
+    BinaryOperatorFactory bf;
     OperandFactory opf; 
     
     public APIJUnitTest() {       
@@ -47,9 +45,8 @@ public class APIJUnitTest {
     
     @Before
     public void setUp() {
-        notf = new NotFactory();
-        andf = new AndFactory();
-        orf = new OrFactory();
+        uf = new UnaryOperatorFactoryImpl();
+        bf = new BinaryOperatorFactoryImpl();
         opf = new OperandFactoryImpl();
     }
     
@@ -69,7 +66,7 @@ public class APIJUnitTest {
     public void testX1andX2() {
           Operand x1 = opf.create();
           Operand x2 = opf.create();
-          LogicCircuit circuit = andf.create(x1, x2);
+          LogicCircuit circuit = bf.create(BinaryOperatorFactory.Type.AND, x1, x2);
           x1.setValue(false);
           x2.setValue(true);
           assertFalse(circuit.evaluate());
@@ -90,7 +87,8 @@ public class APIJUnitTest {
           Operand x2 = opf.create();
           Operand x3 = opf.create();
           
-          LogicCircuit circuit = orf.create(andf.create(x1,x2), x3);
+          LogicCircuit circuit = bf.create(BinaryOperatorFactory.Type.OR, 
+                  bf.create(BinaryOperatorFactory.Type.AND, x1,x2), x3);
           
           x1.setValue(false);
           x2.setValue(true);
@@ -111,7 +109,8 @@ public class APIJUnitTest {
     @Test
     public void testAlwaysTrue() {
           Operand x1 = opf.create();
-          LogicCircuit circuit = orf.create(x1, notf.create(x1));
+          LogicCircuit circuit = bf.create(BinaryOperatorFactory.Type.OR, 
+                  x1, uf.create(UnaryOperatorFactory.Type.NOT, x1));
           x1.setValue(false);
           assertTrue(circuit.evaluate());
           

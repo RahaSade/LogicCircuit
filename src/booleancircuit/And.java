@@ -12,8 +12,7 @@ package booleancircuit;
 class And extends BinaryOperator{
 
     And(LogicCircuit op1, LogicCircuit op2) {
-        this.op1 = op1;
-        this.op2 = op2;
+        super(op1, op2);
     }
 
     @Override
