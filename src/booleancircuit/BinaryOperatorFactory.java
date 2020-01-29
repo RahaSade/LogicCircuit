@@ -9,11 +9,7 @@ package booleancircuit;
  *
  * @author s132054
  */
-public class OrFactory implements BinaryFactory {
-
-    @Override
-    public LogicCircuit create(LogicCircuit lhs, LogicCircuit rhs) {
-        return new Or(lhs, rhs);
-    }
+public interface BinaryOperatorFactory {
     
+    public BinaryOperator create(BinaryOperator.Type type, LogicCircuit lhs, LogicCircuit rhs);
 }

@@ -9,7 +9,18 @@ package booleancircuit;
  *
  * @author 20195003
  */
-abstract class BinaryOperator implements LogicCircuit {
-    protected LogicCircuit op1;
-    protected LogicCircuit op2;
+public abstract class BinaryOperator implements LogicCircuit {
+    
+    public static enum Type {
+        AND,
+        OR
+    }
+    
+    final protected LogicCircuit op1;
+    final protected LogicCircuit op2;
+
+    protected BinaryOperator(LogicCircuit op1, LogicCircuit op2) {
+        this.op1 = op1;
+        this.op2 = op2;
+    }
 }

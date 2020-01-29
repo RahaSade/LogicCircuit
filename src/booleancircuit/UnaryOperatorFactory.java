@@ -9,11 +9,7 @@ package booleancircuit;
  *
  * @author s132054
  */
-public class NotFactory implements UnaryFactory {
-
-    @Override
-    public LogicCircuit create(LogicCircuit operand) {
-        return new Not(operand);
-    }
+public interface UnaryOperatorFactory {
     
+    public UnaryOperator create(UnaryOperator.Type type, LogicCircuit operand);
 }

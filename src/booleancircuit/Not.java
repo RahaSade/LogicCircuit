@@ -12,7 +12,7 @@ package booleancircuit;
 class Not extends UnaryOperator{
     
     Not(LogicCircuit op1) {
-        this.op1 = op1;
+        super(op1);
     }
 
     @Override
