@@ -6,19 +6,25 @@
 package booleancircuit;
 
 /**
- *
+ * 
  * @author 20195003
  */
-class Or extends BinaryOperator{
-    
-    Or(LogicCircuit op1, LogicCircuit op2) {
-        this.op1 = op1;
-        this.op2 = op2;
-    }
+class OperandImpl implements Operand {
 
+    private Boolean value;
+   
+    @Override
+    public void setValue(boolean value) {
+        this.value = value;
+    }
+   
+    
     @Override
     public boolean evaluate() {
-        return (this.op1.evaluate() || this.op2.evaluate());
+        if(value==null)
+            throw new IllegalStateException("No value!");
+        return value;
     }
+    
     
 }

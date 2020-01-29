@@ -7,17 +7,13 @@ package booleancircuit;
 
 /**
  *
- * @author 20195003
+ * @author s132054
  */
-class Not extends UnaryOperator{
-    
-    Not(LogicCircuit op1) {
-        this.op1 = op1;
-    }
+public class OperandFactoryImpl implements OperandFactory{
 
     @Override
-    public boolean evaluate() {
-        return (!this.op1.evaluate());
+    public OperandImpl create() {
+        return new OperandImpl();
     }
     
 }

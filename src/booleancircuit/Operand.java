@@ -6,25 +6,11 @@
 package booleancircuit;
 
 /**
- * 
- * @author 20195003
+ *
+ * @author s132054
  */
-public class Operand implements LogicCircuit{
-
-      private Boolean value;
-
-   
-    public void setValue(boolean value) {
-        this.value = value;
-    }
-   
+public interface Operand extends LogicCircuit {
     
-    @Override
-    public boolean evaluate() {
-        if(value==null)
-            throw new IllegalStateException("No value!");
-        return value;
-    }
-    
+    public void setValue(boolean value);
     
 }

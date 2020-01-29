@@ -7,12 +7,13 @@ package booleancircuit;
 
 /**
  *
- * @author 20195003
+ * @author s132054
  */
-public interface LogicCircuitAPI {
-    
-    public boolean and(boolean op1, boolean op2);
-    public boolean or(boolean op1, boolean op2);
-    public boolean not(boolean op1);
+public class OrFactory implements BinaryFactory {
+
+    @Override
+    public LogicCircuit create(LogicCircuit lhs, LogicCircuit rhs) {
+        return new Or(lhs, rhs);
+    }
     
 }

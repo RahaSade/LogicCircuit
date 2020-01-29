@@ -9,10 +9,7 @@ package booleancircuit;
  *
  * @author 20195003
  */
-public abstract class BinaryOperator implements LogicCircuit {
+abstract class BinaryOperator implements LogicCircuit {
     protected LogicCircuit op1;
     protected LogicCircuit op2;
-
-   
-
 }

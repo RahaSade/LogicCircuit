@@ -9,9 +9,9 @@ package booleancircuit;
  *
  * @author 20195003
  */
-public class And extends BinaryOperator{
+class And extends BinaryOperator{
 
-    public And(LogicCircuit op1, LogicCircuit op2) {
+    And(LogicCircuit op1, LogicCircuit op2) {
         this.op1 = op1;
         this.op2 = op2;
     }

@@ -7,8 +7,10 @@ package booleancircuit;
 
 /**
  *
- * @author 20195003
+ * @author s132054
  */
-public class BooleanCircuitImpl {
+public interface OperandFactory {
+    
+    public OperandImpl create();
     
 }

@@ -7,15 +7,13 @@ package booleancircuit;
 
 /**
  *
- * @author 20195003
+ * @author s132054
  */
-public class BooleanCircuit {
+public class NotFactory implements UnaryFactory {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    @Override
+    public LogicCircuit create(LogicCircuit operand) {
+        return new Not(operand);
     }
     
 }

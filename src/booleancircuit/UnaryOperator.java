@@ -9,6 +9,6 @@ package booleancircuit;
  *
  * @author 20195003
  */
-public abstract class UnaryOperator implements LogicCircuit {
+abstract class UnaryOperator implements LogicCircuit {
     protected LogicCircuit op1;
 }
