@@ -10,11 +10,7 @@ package booleancircuit;
  * @author 20195003
  */
 public abstract class UnaryOperator implements LogicCircuit {    
-    
-    public static enum Type {
-        NOT
-    }
-    
+        
     final protected LogicCircuit op1;
 
     protected UnaryOperator(LogicCircuit op1) {

@@ -17,14 +17,11 @@ class OperandImpl implements Operand {
     public void setValue(boolean value) {
         this.value = value;
     }
-   
-    
+       
     @Override
     public boolean evaluate() {
         if(value==null)
             throw new IllegalStateException("No value!");
         return value;
-    }
-    
-    
+    }        
 }

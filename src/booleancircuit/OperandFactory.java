@@ -9,8 +9,10 @@ package booleancircuit;
  *
  * @author s132054
  */
-public interface OperandFactory {
+public class OperandFactory {
     
-    public Operand create();
+    public Operand create() {
+        return new OperandImpl();
+    }
     
 }

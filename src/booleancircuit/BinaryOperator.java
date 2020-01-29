@@ -10,12 +10,7 @@ package booleancircuit;
  * @author 20195003
  */
 public abstract class BinaryOperator implements LogicCircuit {
-    
-    public static enum Type {
-        AND,
-        OR
-    }
-    
+          
     final protected LogicCircuit op1;
     final protected LogicCircuit op2;
 

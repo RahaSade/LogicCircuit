@@ -7,9 +7,12 @@ package booleancircuit;
 
 /**
  *
- * @author s132054
+ * @author 20195003
  */
-public interface UnaryOperatorFactory {
+public enum OperatorType {
     
-    public UnaryOperator create(UnaryOperator.Type type, LogicCircuit operand);
+        AND,
+        OR,
+        NOT
+    
 }
