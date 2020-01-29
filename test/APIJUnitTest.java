@@ -7,9 +7,6 @@
 import booleancircuit.OperatorFactory;
 import booleancircuit.OperandFactory;
 
-import booleancircuit.BinaryOperator;
-import booleancircuit.OperandFactory;
-
 import booleancircuit.Operand;
 import booleancircuit.LogicCircuit;
 
@@ -19,7 +16,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import booleancircuit.OperatorType;
+import booleancircuit.OperatorType.*;
 
 
 /**
@@ -65,7 +62,7 @@ public class APIJUnitTest {
     public void testX1andX2() {
           Operand x1 = operandFactory.create();
           Operand x2 = operandFactory.create();
-          LogicCircuit circuit = operatorFactory.create(OperatorType.AND, x1, x2);
+          LogicCircuit circuit = operatorFactory.create(Binary.AND, x1, x2);
           x1.setValue(false);
           x2.setValue(true);
           assertFalse(circuit.evaluate());
@@ -86,8 +83,8 @@ public class APIJUnitTest {
           Operand x2 = operandFactory.create();
           Operand x3 = operandFactory.create();
           
-          LogicCircuit circuit = operatorFactory.create(OperatorType.OR, 
-                  operatorFactory.create(OperatorType.AND, x1,x2), x3);
+          LogicCircuit circuit = operatorFactory.create(Binary.OR, 
+                  operatorFactory.create(Binary.AND, x1,x2), x3);
           
           x1.setValue(false);
           x2.setValue(true);
@@ -108,8 +105,8 @@ public class APIJUnitTest {
     @Test
     public void testAlwaysTrue() {
           Operand x1 = operandFactory.create();
-          LogicCircuit circuit = operatorFactory.create(OperatorType.OR, 
-                  x1, operatorFactory.create(OperatorType.NOT, x1));
+          LogicCircuit circuit = operatorFactory.create(Binary.OR, 
+                  x1, operatorFactory.create(Unary.NOT, x1));
           x1.setValue(false);
           assertTrue(circuit.evaluate());
           

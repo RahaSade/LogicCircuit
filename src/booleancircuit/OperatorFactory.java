@@ -12,26 +12,21 @@ package booleancircuit;
  */
 public class OperatorFactory  {
 
-    public LogicCircuit create(OperatorType type, LogicCircuit lhs, LogicCircuit rhs) {
+    public LogicCircuit create(OperatorType.Binary type, LogicCircuit lhs, LogicCircuit rhs) {
         switch (type) {
             case AND:
                 return new And(lhs, rhs);
             case OR:
                 return new Or(lhs, rhs);
-            case NOT:
-                throw new IllegalStateException("only one operand is required");
+            
             default:
                 throw new TypeNotPresentException(type.name(), null);
         }
     }
 
    
-    public LogicCircuit create(OperatorType type, LogicCircuit lc) {
+    public LogicCircuit create(OperatorType.Unary type, LogicCircuit lc) {
         switch (type) {
-            case AND:
-                throw new IllegalStateException("Two operands are needed");
-            case OR:
-                throw new IllegalStateException("Two operands are needed");
             case NOT:
                 return new Not(lc);
             default:

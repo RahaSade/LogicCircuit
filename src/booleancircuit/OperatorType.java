@@ -9,10 +9,15 @@ package booleancircuit;
  *
  * @author 20195003
  */
-public enum OperatorType {
+public final class OperatorType {
     
+    public enum Unary{
+        NOT
+    };
+
+    public enum Binary{
         AND,
         OR,
-        NOT
-    
+    }
+        
 }
