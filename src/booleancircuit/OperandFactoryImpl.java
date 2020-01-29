@@ -12,7 +12,7 @@ package booleancircuit;
 public class OperandFactoryImpl implements OperandFactory{
 
     @Override
-    public OperandImpl create() {
+    public Operand create() {
         return new OperandImpl();
     }
     

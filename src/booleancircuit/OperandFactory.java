@@ -11,6 +11,6 @@ package booleancircuit;
  */
 public interface OperandFactory {
     
-    public OperandImpl create();
+    public Operand create();
     
 }
