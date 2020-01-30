@@ -20,4 +20,9 @@ class Or extends BinaryOperator{
         return (this.op1.evaluate() || this.op2.evaluate());
     }
     
+     @Override
+    public double doubleEvaluate() {
+        return 1 - ((1 - this.op1.doubleEvaluate()) * (1 - this.op2.doubleEvaluate()));
+    }
+    
 }

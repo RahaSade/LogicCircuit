@@ -9,8 +9,8 @@ package booleancircuit;
  *
  * @author 20195003
  */
-class Not extends UnaryOperator{
-    
+class Not extends UnaryOperator {
+
     Not(LogicCircuit op1) {
         super(op1);
     }
@@ -19,5 +19,10 @@ class Not extends UnaryOperator{
     public boolean evaluate() {
         return (!this.op1.evaluate());
     }
-    
+
+    @Override
+    public double doubleEvaluate() {
+        return 1 - this.op1.doubleEvaluate();
+    }
+
 }

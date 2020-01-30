@@ -12,5 +12,6 @@ package booleancircuit;
 public interface LogicCircuit {
     
     public boolean evaluate();
+    public double doubleEvaluate();
     
 }

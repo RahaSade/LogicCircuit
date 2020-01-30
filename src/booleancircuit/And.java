@@ -19,5 +19,12 @@ class And extends BinaryOperator{
     public boolean evaluate() {
         return (this.op1.evaluate() && this.op2.evaluate());
     } 
+
+    @Override
+    public double doubleEvaluate() {
+        return this.op1.doubleEvaluate() * this.op2.doubleEvaluate();
+    }
+    
+    
     
 }

@@ -12,5 +12,6 @@ package booleancircuit;
 public interface Operand extends LogicCircuit {
     
     public void setValue(boolean value);
+    public void setValue(double value);
     
 }

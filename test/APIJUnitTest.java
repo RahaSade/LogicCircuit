@@ -25,8 +25,8 @@ import booleancircuit.OperatorType.*;
  */
 public class APIJUnitTest {
 
-    OperatorFactory operatorFactory;
-    OperandFactory operandFactory; 
+    protected OperatorFactory operatorFactory;
+    protected OperandFactory operandFactory; 
     
     public APIJUnitTest() {       
     }
@@ -120,5 +120,7 @@ public class APIJUnitTest {
         LogicCircuit circuit = x1;
         circuit.evaluate();
     }
- 
+    
+    //-----------------------------------------------------
+  
 }
